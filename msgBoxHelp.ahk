@@ -71,7 +71,7 @@ class VersionManager_msgBoxHelp
     static _ := this._init()
     static _init()    {
         global
-        MSGBOXHELP_VERSION := "1.0.0"
+        MSGBOXHELP_VERSION := "1.0.1"
     }
 }
 msgBoxHelp(text?, title?, options := 0, callback := -1, closeOnHelp := true)    {
