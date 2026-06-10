@@ -78,7 +78,7 @@ class VersionManager_msgBoxHelp
     static _ := VersionManager_msgBoxHelp._init()
     _init()    {
         global
-        MSGBOXHELP_VERSION := "1.0.0"
+        MSGBOXHELP_VERSION := "1.0.1"
     }
 }
 msgBoxHelp(text := "", title := "", options := 0, callback := -1, closeOnHelp := true)    {
@@ -274,7 +274,7 @@ class _MessageBoxHelp
         static S_OK := 0x00000000
         varSetCapacity(pguid, 16, 0)
         if (dllCall("Ole32.dll\CoCreateGuid", "Ptr",&pguid, "Ptr") == S_OK)    {
-            varSetCapacity(lpsz, (A_IsUnicode ? 2 : 1) * 39, 0)
+            varSetCapacity(lpsz, 2 * 39, 0)
             if (dllCall("Ole32.dll\StringFromGUID2", "Ptr",&pguid, "Ptr",&lpsz, "Int",39, "Int"))
                 return strGet(&lpsz, "UTF-16")
         }
